@@ -22,7 +22,6 @@ pipeline {
     post {
         always {
             emailext (
-                emailext(
                 subject: "[${env.JOB_NAME}] [${env.ENV}] #${env.BUILD_NUMBER} : ${currentBuild.currentResult}",
                 body: '${FILE,path="email_template.html"}',
                 attachLog: true,
