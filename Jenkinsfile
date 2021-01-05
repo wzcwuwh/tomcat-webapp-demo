@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('pull code') {
             steps {
-                checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '41921dde-34dd-4183-8ba1-2b7179246052', url: 'git@github.com:wzcwuwh/tomcat-webapp-demo.git']]])
+                checkout([$class: 'GitSCM', branches: [[name: '*/${branch}']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '41921dde-34dd-4183-8ba1-2b7179246052', url: 'git@github.com:wzcwuwh/tomcat-webapp-demo.git']]])
             }
         }
         stage('build project') {
