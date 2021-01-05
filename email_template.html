@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>${ENV,var="JOB_NAME"}-${BUILD_NUMBER}</title>
+</head>
+
+<body leftmargin="8" marginwidth="0" topmargin="8" marginheight="4" offset="0">
+<table width="95%" cellpadding="0" cellspacing="0"
+       style="font-size: 11pt; font-family: Tahoma,Arial,Helvetica,sans-serif">
+    <tr>
+        <td>THIS EMAIL IS SENT BY JENKINS AUTOMATICALLY, PLEASE DON'T REPLY!</td>
+    </tr>
+    <tr>
+        <td>
+            <h2>
+                <font color="#0000FF">BUILD RESULT - ${BUILD_STATUS}</font>
+            </h2>
+        </td>
+    </tr>
+    <tr>
+        <td><br />
+            <b>
+                <font color="#0B610B">DETAILS:</font>
+            </b>
+            <ht size="2" width="100%" byte="center" />
+        </td>
+    </tr>
+    <tr>
+        <td>
+
+            <ul>
+                <li>PROJECT NAME&nbsp;:&nbsp;${PROJECT_NAME}</li>
+                <li>PROJECT URL&nbsp;:&nbsp;<a href="${PROJECT_URL}">${PROJECT_URL}</a></li>
+                <li>BUILD NUMBER&nbsp;:&nbsp;${BUILD_NUMBER}</li>
+                <li>STARTED BY&nbsp;:&nbsp;${CAUSE}</li>
+                <li>BUILD URL&nbsp;:&nbsp;<a href="${BUILD_URL}">${BUILD_URL}</a></li>
+                <li>BUILD LOG&nbsp;:&nbsp;<a href="${BUILD_URL}console">${BUILD_URL}console</a></li>
+                <li>BUILD WORKFLOW&nbsp;:&nbsp;<a
+                        href="${PROJECT_URL}workflow-stage">${PROJECT_URL}workflow-stage</a></li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <font color="#0B610B">BUILD LOG (LAST 200 ROWS):</font></b>
+            <hr size="2" width="100%" byte="center" />
+        </td>
+    </tr>
+    <tr>
+        <td><textarea cols="80" rows="30" readonly="readonly"
+                      style="font-family: Courier New">${BUILD_LOG,maxLines=200,escapeHtml=true}</textarea>
+        </td>
+    </tr>
+</table>
+</body>
+
+</html>
